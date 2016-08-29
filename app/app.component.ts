@@ -26,8 +26,8 @@ import { MealComponent} from './meal.component';
   new Meal("Tuna", "Tuna house", "220")
   ];
 }
- mealWasSelected(clickedMeal: Meal): void {
-   console.log("Main"clickedMeal);
- }
+mealWasSelected(clickedMeal: Meal): void {
+  console.log("main",clickedMeal);
+}
 
 }
