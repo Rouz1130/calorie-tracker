@@ -7,12 +7,13 @@ import {NewMealComponent} from './new-meal.component';
 
 @Component({
   selector: 'meal-list',
-  inputs: ['mealList'],
+  inputs: ['mealList','onSubmitNewMeal'],
   outputs: ['onMealSelect'],
   directives: [MealComponent, EditMealDetailsComponent, NewMealComponent],
   template: `
   <meal-display *ngFor="#currentMeal of mealList" (click)= "mealClicked(currentMeal)" [class.selected]="currentMeal === selectedMeal"[meal]="currentMeal"></meal-display>
   <edit-meal-details *ngIf="selectedMeal" [meal]="selectedMeal"></edit-meal-details>
+  <new-meal (onSubmitNewMeal)="createMeal($event)"></new-meal>
   `
 })
 
@@ -31,7 +32,7 @@ export class MealListComponent {
   }
   createMeal(meal): void {
     this.mealList.push(
-      new meal(meal.userName, meal.userDetails, meal.userCalories)
+      new Meal(meal.userName, meal.userDetails, meal.userCalories)
     )
   }
 }

@@ -10,7 +10,6 @@ import { MealComponent} from './meal.component';
     <div class="container">
       <h1>Meal Calorie Tracker!</h1>
       <br>
-      <p>Select</p>
       <meal-list
         [mealList]="meals"
         (onMealSelect)="mealWasSelected($event)">
