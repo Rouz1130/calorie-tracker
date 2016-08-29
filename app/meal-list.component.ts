@@ -29,5 +29,10 @@ export class MealListComponent {
     this.selectedMeal = clickedMeal;
     this.onMealSelect.emit(clickedMeal);
   }
+  createMeal(meal): void {
+    this.mealList.push(
+      new meal(meal.userName, meal.userDetails, meal.userCalories)
+    )
+  }
 
 }
