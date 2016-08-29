@@ -34,5 +34,4 @@ export class MealListComponent {
       new meal(meal.userName, meal.userDetails, meal.userCalories)
     )
   }
-
 }
