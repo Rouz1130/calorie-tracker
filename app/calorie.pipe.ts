@@ -5,19 +5,28 @@ import { Meal } from './meal.model';
   name: "calories",
   pure: false
 })
-
 export class CaloriePipe implements PipeTransform {
-  transform = function(input: Meal[]){
+  transform = function(input: Meal[], info){
     var desiredCalories = info[0];
     var output: Meal[] = [];
     if(desiredCalories === "lowCalorie"){
-    for (var i = 0; i < input.length; i++){
-      var digits = parseInt(input[i].calories);
-      if(digits <= 250 ){
-        output.push(input[i]);
+      for (var i = 0; i < input.length; i++){
+        var digits = parseInt(input[i].calories);
+        if(digits <= 250 ){
+          output.push(input[i]);
+        }
       }
+      return output;
+    } else if (desiredCalories === "highCalorie"){
+      for (var i = 0; i < input.length; i++){
+        var digits = parseInt(input[i].calories);
+        if(digits > 250 ){
+          output.push(input[i]);
+        }
+      }
+      return output;
+    }   else {
+      return output;
     }
-    return output;
   }
-
 }
