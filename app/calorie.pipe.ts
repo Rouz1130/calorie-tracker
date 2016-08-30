@@ -1,6 +1,5 @@
 import { Pipe, PipeTransform } from 'angular2/core';
-import { Food } from './meal.model';
-
+import { Meal } from './meal.model';
 
 @Pipe({
   name: "calories",
@@ -9,5 +8,15 @@ import { Food } from './meal.model';
 
 export class CaloriePipe implements PipeTransform {
   transform = function(input: Meal[]){
-    var output: Meal[] = [];  
+    var output: Meal[] = [];
+
+    for (var i = 0; i < input.length; i++){
+      var digits = parseInt(input[i].calories);
+      if(digits <= 250 ){
+        output.push(input[i]);
+      }
+    }
+    return output;
+  }
+
 }
