@@ -11,6 +11,7 @@ import {NewMealComponent} from './new-meal.component';
   outputs: ['onMealSelect'],
   directives: [MealComponent, EditMealDetailsComponent, NewMealComponent],
   template: `
+  
   <meal-display *ngFor="#currentMeal of mealList" (click)= "mealClicked(currentMeal)" [class.selected]="currentMeal === selectedMeal"[meal]="currentMeal"></meal-display>
   <edit-meal-details *ngIf="selectedMeal" [meal]="selectedMeal"></edit-meal-details>
   <new-meal (onSubmitNewMeal)="createMeal($event)"></new-meal>

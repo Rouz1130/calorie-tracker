@@ -1,7 +1,40 @@
 body {
-  background-image: url("http://previews.123rf.com/images/didecs/didecs1503/didecs150300224/38098326-Food-background-with-empty-plate-tomatos-and-kitchen-towel-Stock-Photo.jpg");
+  background-image: url("http://previews.123rf.com/images/karandaev/karandaev1503/karandaev150300334/37464130-Healthy-breakfast-with-fried-egg-toasts-and-salad-on-white-wooden-table-Top-view-with-copy-space-Stock-Photo.jpg");
 }
 
 h1 {
-  color: black;
+  color: #ac7339;
+  font-size: 60px;
+  font-family: cursive;;
+  font-style: italic;
+  padding-bottom: 30px;
+
+}
+
+h4 {
+  color: #ac7339;
+  font-size: 20px;
+  font-family: cursive;
+  font-style:italic;
+}
+
+h3{
+  color: #ac7339;
+  font-family: cursive;;
+  font-size: 20px;
+  font-style: italic;
+}
+h1 {
+  text-shadow: 0 1px 0 #ccc,
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
 }
