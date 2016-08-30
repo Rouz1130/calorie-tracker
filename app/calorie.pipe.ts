@@ -3,6 +3,11 @@ import { Food } from './meal.model';
 
 
 @Pipe({
-  name:
-  pure:
+  name: "calories",
+  pure: false
 })
+
+export class CaloriePipe implements PipeTransform {
+  transform = function(input: Meal[]){
+    var output: Meal[] = [];  
+}
