@@ -26,7 +26,7 @@ export class CaloriePipe implements PipeTransform {
       }
       return output;
     }   else {
-      return output;
+      return input;
     }
   }
 }

@@ -12,11 +12,22 @@ import { CaloriePipe } from './calorie.pipe';
   directives: [MealComponent, EditMealDetailsComponent, NewMealComponent],
   pipes: [CaloriePipe],
   template: `
-  <meal-display *ngFor="#currentMeal of mealList" (click)= "mealClicked(currentMeal)" [class.selected]="currentMeal === selectedMeal"[meal]="currentMeal"></meal-display>
-  <edit-meal-details *ngIf="selectedMeal" [meal]="selectedMeal"></edit-meal-details>
   <new-meal (onSubmitNewMeal)="createMeal($event)"></new-meal>
-  `
-})
+    <h3>Your Meals</h3>
+
+    <select (change)="onChange($event.target.value)" class="filter">
+   <option value="all" selected="selected">Show All</option>
+   <option value="lowCalorie">Low Calorie</option>
+   <option value="highCalorie" >High Calorie</option>
+ </select>
+  <br>
+  <br>
+   <h3><p>Edit Food Details:</p></h3>
+   <meal-display *ngFor="#currentMeal of mealList | calories:selectedCompleteness"
+  (click)= "mealClicked(currentMeal)" [class.selected]="currentMeal === selectedMeal"[meal]="currentMeal"></meal-display>
+   <edit-meal-details *ngIf="selectedMeal" [meal]="selectedMeal"></edit-meal-details>
+   `
+  })
 
 
 export class MealListComponent {
