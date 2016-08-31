@@ -3,7 +3,7 @@ import { Meal } from './meal.model';
 import { MealComponent} from './meal.component';
 import { EditMealDetailsComponent } from './edit-meal-details.component';
 import {NewMealComponent} from './new-meal.component';
-
+import { CaloriePipe } from './calorie.pipe';
 
 @Component({
   selector: 'meal-list',
@@ -11,7 +11,7 @@ import {NewMealComponent} from './new-meal.component';
   outputs: ['onMealSelect'],
   directives: [MealComponent, EditMealDetailsComponent, NewMealComponent],
   template: `
-  
+
   <meal-display *ngFor="#currentMeal of mealList" (click)= "mealClicked(currentMeal)" [class.selected]="currentMeal === selectedMeal"[meal]="currentMeal"></meal-display>
   <edit-meal-details *ngIf="selectedMeal" [meal]="selectedMeal"></edit-meal-details>
   <new-meal (onSubmitNewMeal)="createMeal($event)"></new-meal>
